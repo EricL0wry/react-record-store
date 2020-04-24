@@ -1,7 +1,3 @@
-*{
-  box-sizing: border-box;
-}
-
 .card-image{
   object-fit: contain;
   height: 320px;
