@@ -17,7 +17,7 @@ class ProductList extends React.Component {
     fetch('/api/products')
       .then(res => res.json())
       .then(data => {
-        // this.setState({ products: data });
+        this.setState({ products: data });
         // eslint-disable-next-line no-console
         console.log(data);
       })
@@ -25,11 +25,16 @@ class ProductList extends React.Component {
   }
 
   render() {
-    // const cards = this.state.products.map(product => <ProductListItem product={product} />)
+    let cards;
+    if (this.state.products.length) {
+      cards = this.state.products.map(product => <ProductListItem key={product.productId} product={product} />);
+    }
     return (
-      <div className="row">
-        <ProductListItem />
+
+      <div className="row align-items-stretch">
+        {cards || ''}
       </div>
+
     );
   }
 

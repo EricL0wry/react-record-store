@@ -4,10 +4,12 @@ function Header() {
 
   return (
     <nav className="navbar navbar-dark bg-dark">
-      <a href="#" className="navbar-brand ml-4">
-        <i className="fas fa-broom mr-2"></i>
+      <div className="container">
+        <a href="#" className="navbar-brand ml-1">
+          <i className="fas fa-broom mr-2"></i>
         Wicked Sales
-      </a>
+        </a>
+      </div>
     </nav>
   );
 }

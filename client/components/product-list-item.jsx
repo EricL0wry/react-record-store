@@ -1,15 +1,17 @@
 import React from 'react';
 
 function ProductListItem(props) {
+  const { name, price, image, shortDescription } = props.product;
+  const cost = `$${(price / 100).toFixed(2)}`;
 
   return (
-    <div className="col-4">
-      <div className="card">
-        <img className="card-img-top" src="./images/shake-weight.jpg" alt="A ridiculous exercise tool"/>
+    <div className="col-12 col-md-6 col-lg-4 my-3">
+      <div className="card h-100">
+        <img className="card-img-top card-image" src={image} alt="A ridiculous exercise tool"/>
         <div className="card-body">
-          <h5 className="card-title">Shake Weight</h5>
-          <h6 className="card-subtitle text-muted">$100.00</h6>
-          <p className="card-text">Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.</p>
+          <h5 className="card-title">{name}</h5>
+          <h6 className="card-subtitle text-muted">{cost}</h6>
+          <p className="card-text">{shortDescription}</p>
         </div>
       </div>
     </div>
