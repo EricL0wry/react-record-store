@@ -46,8 +46,9 @@ app.get('/api/products/:productId', (req, res, next) => {
       const product = result.rows[0];
       if (!product) {
         next(new ClientError(`${params[0]} is not a valid productId`, 404));
+      } else {
+        res.json(result.rows[0]);
       }
-      res.json(result.rows[0]);
     })
     .catch(err => next(err));
 });
