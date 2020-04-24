@@ -7,7 +7,7 @@ function ProductListItem(props) {
   return (
     <div className="col-12 col-md-6 col-lg-4 my-3">
       <div className="card h-100">
-        <img className="card-img-top card-image" src={image} alt="A ridiculous exercise tool"/>
+        <img className="card-img-top card-image contain" src={image} alt="A ridiculous exercise tool"/>
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <h6 className="card-subtitle text-muted">{cost}</h6>

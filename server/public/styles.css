@@ -1,4 +1,11 @@
-.card-image{
+.contain{
   object-fit: contain;
+}
+
+.card-image{
   height: 320px;
+}
+
+.detail-image{
+  height: 360px;
 }

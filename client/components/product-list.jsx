@@ -28,7 +28,7 @@ class ProductList extends React.Component {
       cards = this.state.products.map(product => <ProductListItem key={product.productId} product={product} />);
     }
     return (
-      <div className="row align-items-stretch">
+      <div className="row">
         {cards || ''}
       </div>
     );
