@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header';
-import ProductListItem from './product-list-item';
+import ProductList from './product-list';
 
 class App extends React.Component {
 
@@ -8,9 +8,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header />
-        <div className="row">
-          <ProductListItem />
-        </div>
+        <ProductList />
       </div>
     );
   }
