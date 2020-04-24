@@ -19,12 +19,12 @@ class App extends React.Component {
   }
 
   render() {
+    const { name } = this.state.view;
     return (
       <div>
         <Header />
         <div className="container my-4">
-          <ProductList setView={this.setView}/>
-          {/* <ProductDetails /> */}
+          {name === 'catalog' ? <ProductList setView={this.setView} /> : <ProductDetails />}
         </div>
       </div>
     );
