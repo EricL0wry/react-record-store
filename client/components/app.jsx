@@ -19,12 +19,15 @@ class App extends React.Component {
   }
 
   render() {
-    const { name } = this.state.view;
+    const { name, params } = this.state.view;
+    const list = <ProductList setView={this.setView} />;
+    const details = <ProductDetails setView={this.setView} params={params} />;
+
     return (
       <div>
         <Header />
         <div className="container my-4">
-          {name === 'catalog' ? <ProductList setView={this.setView} /> : <ProductDetails />}
+          {name === 'catalog' ? list : details}
         </div>
       </div>
     );
