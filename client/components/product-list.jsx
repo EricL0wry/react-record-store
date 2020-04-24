@@ -25,7 +25,13 @@ class ProductList extends React.Component {
   render() {
     let cards;
     if (this.state.products.length) {
-      cards = this.state.products.map(product => <ProductListItem key={product.productId} product={product} />);
+      cards = this.state.products.map(product => {
+        return <ProductListItem
+          key={product.productId}
+          product={product}
+          setView={this.props.setView}
+        />;
+      });
     }
     return (
       <div className="row">

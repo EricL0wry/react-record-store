@@ -9,3 +9,8 @@
 .detail-image{
   height: 360px;
 }
+
+.item:hover,
+.back:hover{
+  cursor: pointer;
+}

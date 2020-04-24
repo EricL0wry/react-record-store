@@ -26,7 +26,7 @@ class ProductDetails extends React.Component {
       <div className="row">
         <div className="col-12">
           <div className="card">
-            <h6 className="text-muted mt-4 ml-4 mb-0">&lt; Back to catalog</h6>
+            <h6 className="back text-muted mt-4 ml-4 mb-0">&lt; Back to catalog</h6>
             <div className="card-body d-flex flex-row py-0">
               <img className="col-5 detail-image contain pl-0" src={image} alt={name}/>
               <div className="card-body col-7">
