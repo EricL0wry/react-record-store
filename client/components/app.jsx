@@ -37,7 +37,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <Header cartQty={this.state.cart.lenth}/>
+        <Header cartItemCount={this.state.cart.lenth}/>
         <div className="container my-4">
           {name === 'catalog' ? list : details}
         </div>
