@@ -13,10 +13,21 @@ class App extends React.Component {
     this.setView = this.setView.bind(this);
   }
 
+  componentDidMount() {
+    this.getCartItems();
+  }
+
   setView(name, params) {
     this.setState({
       view: { name, params }
     });
+  }
+
+  getCartItems() {
+    fetch('/api/cart')
+      .then(res => res.json())
+      .then(data => this.setState({ cart: data }))
+      .catch(error => console.error(error));
   }
 
   render() {
