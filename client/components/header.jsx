@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Header() {
+function Header(props) {
+  const { cartQty } = props;
 
   return (
     <nav className="navbar navbar-dark bg-dark">
