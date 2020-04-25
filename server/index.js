@@ -92,10 +92,10 @@ app.post('/api/cart', (req, res, next) => {
 
   db.query(priceCheck, params)
     .then(result => {
-      const { price } = result.rows[0];
-      if (!price) {
-        next(new ClientError(`unable to locate productId ${productId}`, 400));
+      if (!result.rows[0]) {
+        throw new ClientError(`unable to locate productId ${productId}`, 400);
       } else {
+        const { price } = result.rows[0];
         const { cartId } = req.session;
         if (cartId) {
           return { cartId, price };
@@ -150,7 +150,8 @@ app.post('/api/cart', (req, res, next) => {
           res.status(201).json(result.rows);
         })
         .catch(err => next(err));
-    });
+    })
+    .catch(err => next(err));
 });
 
 app.use('/api', (req, res, next) => {
