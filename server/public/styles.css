@@ -11,6 +11,7 @@
 }
 
 .item:hover,
-.back:hover{
+.back:hover,
+.cart:hover{
   cursor: pointer;
 }
