@@ -77,7 +77,7 @@ app.get('/api/cart', (req, res, next) => {
 });
 
 app.post('/api/cart', (req, res, next) => {
-  const { productId } = req.body;
+  const productId = req.body.productId;
   if (!parseInt(productId, 10) || Math.sign(productId) !== 1) {
     next(new ClientError('productId must be a positive integer', 400));
     return;
@@ -147,7 +147,7 @@ app.post('/api/cart', (req, res, next) => {
 
       return db.query(cartItems, params)
         .then(result => {
-          res.status(201).json(result.rows);
+          res.status(201).json(result.rows[0]);
         })
         .catch(err => next(err));
     })
