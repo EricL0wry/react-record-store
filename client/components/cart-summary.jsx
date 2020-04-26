@@ -23,7 +23,10 @@ function CartSummary(props) {
       </h6>
       <h1 className="mt-4">My Cart</h1>
       {cards}
-      <h3 className="mt-4">Item Total {total}</h3>
+      <div className="d-flex justify-content-between my-4">
+        <h3>Item Total {total}</h3>
+        <button className="btn btn-primary" onClick={() => props.setView('checkout', {})}>Checkout</button>
+      </div>
     </div>
   );
 }

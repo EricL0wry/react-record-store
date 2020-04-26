@@ -83,7 +83,7 @@ class App extends React.Component {
       <div>
         <Header cartItemCount={this.state.cart.length} setView={this.setView}/>
         <div className="container my-4">
-          {cart}
+          {view}
         </div>
       </div>
     );

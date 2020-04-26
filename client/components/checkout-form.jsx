@@ -47,7 +47,6 @@ class CheckoutForm extends React.Component {
             <button className="btn btn-primary" type="button">Place Order</button>
           </div>
         </form>
-
       </div>
     );
   }
