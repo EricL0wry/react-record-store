@@ -28,6 +28,7 @@ app.get('/api/products', (req, res, next) => {
            "shortDescription"
       from "products"
   `;
+
   db.query(sql)
     .then(result => res.json(result.rows))
     .catch(err => next(err));
