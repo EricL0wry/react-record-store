@@ -28,6 +28,7 @@ app.get('/api/products', (req, res, next) => {
            "shortDescription"
       from "products"
   `;
+
   db.query(sql)
     .then(result => res.json(result.rows))
     .catch(err => next(err));
@@ -150,6 +151,41 @@ app.post('/api/cart', (req, res, next) => {
           res.status(201).json(result.rows[0]);
         })
         .catch(err => next(err));
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/orders', (req, res, next) => {
+  const { cartId } = req.session;
+  const { name, creditCard, shippingAddress } = req.body;
+  if (!cartId) {
+    return next(new ClientError('valid cartId is required', 400));
+  }
+  if (!name) {
+    return next(new ClientError('a customer name is required', 400));
+  }
+  if (!creditCard) {
+    return next(new ClientError('a credit card is required', 400));
+  }
+  if (!shippingAddress) {
+    return next(new ClientError('a shipping address is required', 400));
+  }
+
+  const params = [cartId, name, creditCard, shippingAddress];
+  const order = `
+       insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
+       values ($1, $2, $3, $4)
+    returning "orderId",
+              "createdAt",
+              "name",
+              "creditCard",
+              "shippingAddress";
+  `;
+
+  db.query(order, params)
+    .then(result => {
+      delete req.session.cartId;
+      res.status(201).json(result.rows[0]);
     })
     .catch(err => next(err));
 });
