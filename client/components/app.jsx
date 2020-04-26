@@ -14,6 +14,7 @@ class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
   }
 
   componentDidMount() {
@@ -72,7 +73,7 @@ class App extends React.Component {
     const catalog = <ProductList setView={this.setView} />;
     const details = <ProductDetails setView={this.setView} addToCart={this.addToCart} params={params} />;
     const cart = <CartSummary setView={this.setView} cart={this.state.cart} />;
-    const checkout = <CheckoutForm setView={this.setView} cart={this.state.cart} />;
+    const checkout = <CheckoutForm setView={this.setView} cart={this.state.cart} placeOrder={this.placeOrder}/>;
     let view;
     if (name === 'catalog') view = catalog;
     if (name === 'details') view = details;

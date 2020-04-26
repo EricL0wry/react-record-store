@@ -21,6 +21,7 @@ class CheckoutForm extends React.Component {
   render() {
     const { cart } = this.props;
     const total = `$${(cart.reduce((acc, curr) => acc + curr.price, 0) / 100).toFixed(2)}`;
+
     return (
       <div className="row flex-column px-3">
         <h1 className="mt-4">Checkout</h1>
@@ -41,10 +42,17 @@ class CheckoutForm extends React.Component {
           <div className="d-flex justify-content-between mt-4">
             <h6
               className="back text-muted mt-4 ml-4 mb-0"
+              onClick={() => this.props.setView('catalog', {})}
             >
               &lt; Continue Shopping
             </h6>
-            <button className="btn btn-primary" type="button">Place Order</button>
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={() => this.props.placeOrder(this.state)}
+            >
+              Place Order
+            </button>
           </div>
         </form>
       </div>
