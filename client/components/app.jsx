@@ -52,6 +52,20 @@ class App extends React.Component {
       .catch(error => console.error(error));
   }
 
+  placeOrder(order) {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    };
+
+    fetch('/api/orders', options)
+      .then(() => this.setState({ cart: [], view: { name: 'catalog', params: {} } }))
+      .catch(error => console.error(error));
+  }
+
   render() {
     const { name, params } = this.state.view;
     const catalog = <ProductList setView={this.setView} />;
