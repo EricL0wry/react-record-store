@@ -10,7 +10,10 @@ function Header(props) {
           <i className="fas fa-broom mr-2"></i>
         Wicked Sales
         </a>
-        <div className="cart navbar-brand d-flex flex-row">
+        <div
+          className="cart navbar-brand d-flex flex-row"
+          onClick={() => props.setView('cart', {})}
+        >
           <h6 className="mb-0">{`${cartItemCount} Items`}</h6>
           <i className="fas fa-shopping-cart ml-2"></i>
         </div>
