@@ -264,6 +264,20 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 50	19	3	2900
 51	20	3	2900
 52	21	3	2900
+53	22	1	2999
+54	22	3	2900
+55	22	6	830
+56	22	1	2999
+57	22	2	2595
+58	23	1	2999
+59	24	1	2999
+60	24	2	2595
+61	25	1	2999
+62	25	3	2900
+63	25	6	830
+64	26	1	2999
+65	27	2	2595
+66	27	3	2900
 \.
 
 
@@ -293,6 +307,12 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 19	2020-04-26 10:26:50.578027-07
 20	2020-04-26 10:47:13.000703-07
 21	2020-04-26 10:48:58.303818-07
+22	2020-04-26 11:36:52.690562-07
+23	2020-04-26 12:33:03.538276-07
+24	2020-04-26 12:38:05.693055-07
+25	2020-04-26 12:40:16.206031-07
+26	2020-04-26 12:42:39.057428-07
+27	2020-04-26 12:45:13.195482-07
 \.
 
 
@@ -304,6 +324,12 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 1	19	bob	123456789	Road	2020-04-26 10:45:53.186726-07
 2	20	bob	123456789	Road	2020-04-26 10:48:03.950428-07
 3	21	Bob	1234567812349874	streetstreet	2020-04-26 10:51:36.452596-07
+4	22	Rob Bobberts	1234 1234 1234 1234	1234 Road St.\nCity, State, 0832403	2020-04-26 12:30:21.264543-07
+5	23	Farts McGee	1234 1234 1234 1234	1234 Road St,\nCity, State, 0932489	2020-04-26 12:33:31.692565-07
+6	24	Will Billiamsom	1234 1234 1234 1234	1234 Street\nCity, State 93842234	2020-04-26 12:38:30.885166-07
+7	25	Farts McGee	1234 1234 1234 1234	Address	2020-04-26 12:41:37.336116-07
+8	26	Farts McGee	1234 1234 1234 1234	address\naddress	2020-04-26 12:44:25.313585-07
+9	27	Eric Lowry	1234 1234 1234 1234	address\naddress\naddress	2020-04-26 12:45:32.655061-07
 \.
 
 
@@ -325,21 +351,21 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 52, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 66, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 21, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 27, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 3, true);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 9, true);
 
 
 --
