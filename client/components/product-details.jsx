@@ -49,7 +49,9 @@ class ProductDetails extends React.Component {
               </div>
             </div>
             <div className="card-body">
-              <p>{longDescription}</p>
+              {longDescription.split('\n').map((string, index) => {
+                return <p key={index}>{string}</p>;
+              })}
             </div>
           </div>
         </div>
