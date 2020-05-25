@@ -30,17 +30,17 @@ class ProductDetails extends React.Component {
           <div className="card">
             <div className="card-body">
               <h6
-                className="back text-muted mt-0 ml-4 mb-0"
+                className="back text-muted mt-0 ml-lg-3 mb-0"
                 onClick={() => this.props.setView('catalog', {})}
               >
               &lt; Back to Catalog
               </h6>
             </div>
             <div className="card-body d-flex flex-row flex-wrap py-0 col-12">
-              <div className="card-body col-lg-6 col-xl-5 px-0">
+              <div className="card-body col-lg-6 col-xl-5 py-sm-3 p-0">
                 <img className="detail-image contain px-0 col-12" src={image} alt={name}/>
               </div>
-              <div className="card-body col-lg-6 col-xl-7 px-0">
+              <div className="card-body col-lg-6 col-xl-7 py-sm-3 p-0 pt-3">
                 <h2>{name}</h2>
                 <h4 className="text-muted">{cost}</h4>
                 <p>{shortDescription}</p>
@@ -52,7 +52,7 @@ class ProductDetails extends React.Component {
                 </button>
               </div>
             </div>
-            <div className="card-body">
+            <div className="card-body mx-lg-3">
               {longDescription.split('\n').map((string, index) => {
                 return <p key={index}>{string}</p>;
               })}
