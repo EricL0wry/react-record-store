@@ -21,7 +21,7 @@ class ProductDetails extends React.Component {
       return null;
     }
 
-    const { image, name, price, shortDescription, longDescription } = this.state.product;
+    const { image, name, price, shortDescription, longDescription, bandName, year, genre } = this.state.product;
     const cost = `$${(price / 100).toFixed(2)}`;
 
     return (
@@ -33,7 +33,7 @@ class ProductDetails extends React.Component {
                 className="back text-muted mt-0 ml-lg-3 mb-0"
                 onClick={() => this.props.setView('catalog', {})}
               >
-              &lt; Back to Catalog
+                <i className="fas fa-caret-left"></i> Back to Catalog
               </h6>
             </div>
             <div className="card-body d-flex flex-row flex-wrap py-0 col-12">
@@ -41,9 +41,10 @@ class ProductDetails extends React.Component {
                 <img className="detail-image contain px-0 col-12" src={image} alt={name}/>
               </div>
               <div className="card-body col-lg-6 col-xl-7 py-sm-3 p-0 pt-3">
+                <h4 className="card-subtitle pt-sm-3">{bandName}</h4>
                 <h2>{name}</h2>
                 <h4 className="text-muted">{cost}</h4>
-                <p>{shortDescription}</p>
+                <p>{year} | {genre} <br/>{shortDescription}</p>
                 <button
                   className="btn btn-primary"
                   onClick={() => this.props.addToCart(this.state.product)}
