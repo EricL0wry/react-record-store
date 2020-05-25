@@ -28,15 +28,19 @@ class ProductDetails extends React.Component {
       <div className="row">
         <div className="col-12">
           <div className="card">
-            <h6
-              className="back text-muted mt-4 ml-4 mb-0"
-              onClick={() => this.props.setView('catalog', {})}
-            >
-              &lt; Back to catalog
-            </h6>
-            <div className="card-body d-flex flex-row py-0">
-              <img className="col-5 detail-image contain pl-0" src={image} alt={name}/>
-              <div className="card-body col-7">
+            <div className="card-body">
+              <h6
+                className="back text-muted mt-0 ml-4 mb-0"
+                onClick={() => this.props.setView('catalog', {})}
+              >
+              &lt; Back to Catalog
+              </h6>
+            </div>
+            <div className="card-body d-flex flex-row flex-wrap py-0 col-12">
+              <div className="card-body col-lg-6 col-xl-5 px-0">
+                <img className="detail-image contain px-0 col-12" src={image} alt={name}/>
+              </div>
+              <div className="card-body col-lg-6 col-xl-7 px-0">
                 <h2>{name}</h2>
                 <h4 className="text-muted">{cost}</h4>
                 <p>{shortDescription}</p>
