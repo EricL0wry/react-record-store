@@ -21,25 +21,30 @@ class ProductDetails extends React.Component {
       return null;
     }
 
-    const { image, name, price, shortDescription, longDescription } = this.state.product;
+    const { image, name, price, shortDescription, longDescription, bandName, year, genre } = this.state.product;
     const cost = `$${(price / 100).toFixed(2)}`;
 
     return (
       <div className="row">
         <div className="col-12">
           <div className="card">
-            <h6
-              className="back text-muted mt-4 ml-4 mb-0"
-              onClick={() => this.props.setView('catalog', {})}
-            >
-              &lt; Back to catalog
-            </h6>
-            <div className="card-body d-flex flex-row py-0">
-              <img className="col-5 detail-image contain pl-0" src={image} alt={name}/>
-              <div className="card-body col-7">
+            <div className="card-body">
+              <h6
+                className="back text-muted mt-0 ml-lg-3 mb-0"
+                onClick={() => this.props.setView('catalog', {})}
+              >
+                <i className="fas fa-caret-left"></i> Back to Catalog
+              </h6>
+            </div>
+            <div className="card-body d-flex flex-row flex-wrap py-0 col-12">
+              <div className="card-body col-lg-6 col-xl-5 py-sm-3 p-0">
+                <img className="detail-image contain px-0 col-12" src={image} alt={name}/>
+              </div>
+              <div className="card-body col-lg-6 col-xl-7 py-sm-3 p-0 pt-3">
+                <h4 className="card-subtitle pt-sm-3">{bandName}</h4>
                 <h2>{name}</h2>
                 <h4 className="text-muted">{cost}</h4>
-                <p>{shortDescription}</p>
+                <p>{year} | {genre} <br/>{shortDescription}</p>
                 <button
                   className="btn btn-primary"
                   onClick={() => this.props.addToCart(this.state.product)}
@@ -48,7 +53,7 @@ class ProductDetails extends React.Component {
                 </button>
               </div>
             </div>
-            <div className="card-body">
+            <div className="card-body mx-lg-3">
               {longDescription.split('\n').map((string, index) => {
                 return <p key={index}>{string}</p>;
               })}
