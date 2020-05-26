@@ -65,7 +65,10 @@ app.get('/api/cart', (req, res, next) => {
              "p"."productId",
              "p"."image",
              "p"."name",
-             "p"."shortDescription"
+             "p"."shortDescription",
+             "p"."bandName",
+             "p"."genre",
+             "p"."year"
         from "cartItems" as "c"
         join "products" as "p" using ("productId")
        where "c"."cartId" = $1

@@ -36,7 +36,7 @@ class ProductDetails extends React.Component {
                 <i className="fas fa-caret-left"></i> Back to Catalog
               </h6>
             </div>
-            <div className="card-body d-flex flex-row flex-wrap py-0 col-12">
+            <div className="card-body d-flex flex-row flex-wrap align-items-center py-0 col-12">
               <div className="card-body col-lg-6 col-xl-5 py-sm-3 p-0">
                 <img className="detail-image contain px-0 col-12" src={image} alt={name}/>
               </div>

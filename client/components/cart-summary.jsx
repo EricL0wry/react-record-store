@@ -22,10 +22,10 @@ function CartSummary(props) {
   return (
     <div className="row flex-column px-3">
       <h6
-        className="back text-muted mt-4 ml-4 mb-0"
+        className="back text-muted mt-4 ml-0 mb-0"
         onClick={() => props.setView('catalog', {})}
       >
-        &lt; Back to catalog
+        <i className="fas fa-caret-left"></i> Back to Catalog
       </h6>
       <h1 className="mt-4">My Cart</h1>
       {cards}
