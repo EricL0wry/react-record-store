@@ -55,6 +55,8 @@ class App extends React.Component {
   }
 
   placeOrder(order) {
+    // const { name, creditCard, shippingAddress } = order;
+    // if (name && creditCard && shippingAddress) {
     const options = {
       method: 'POST',
       headers: {
@@ -66,6 +68,7 @@ class App extends React.Component {
     fetch('/api/orders', options)
       .then(() => this.setState({ cart: [], view: { name: 'catalog', params: {} } }))
       .catch(error => console.error(error));
+    // }
   }
 
   render() {
