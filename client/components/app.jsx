@@ -83,6 +83,7 @@ class App extends React.Component {
     return (
       <div>
         <Header cartItemCount={this.state.cart.length} setView={this.setView}/>
+        <div className="header-spacer"></div>
         <div className="container my-4">
           {view}
         </div>

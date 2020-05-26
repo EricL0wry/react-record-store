@@ -1,3 +1,11 @@
+.header-spacer{
+  height: 61px;
+}
+
+.logo{
+  height: 35px;
+}
+
 .contain{
   object-fit: contain;
 }
