@@ -23,3 +23,8 @@
 .cart:hover{
   cursor: pointer;
 }
+
+.form-instructions{
+  color: red;
+  font-size: .75rem;
+}
