@@ -7,9 +7,11 @@ function CartSummaryItem(props) {
   return (
     <div className="col-12 px-0 my-3">
       <div className="card">
-        <div className="card-body d-flex flex-row py-0 align-items-center">
-          <img className="col-4 card-image contain py-3 pl-0" src={image} alt={name} />
-          <div className="col-8 card-body">
+        <div className="card-body d-flex flex-row flex-wrap py-0 align-items-center">
+          <div className="card-body col-lg-6 col-xl-5 py-sm-3 p-0">
+            <img className="detail-image contain px-0 col-12" src={image} alt={name} />
+          </div>
+          <div className="card-body col-lg-6 col-xl-7 py-sm-3 p-0 pt-3">
             <h2>{name}</h2>
             <h4 className="text-muted">{cost}</h4>
             <p>{shortDescription}</p>
