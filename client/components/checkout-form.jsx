@@ -9,6 +9,7 @@ class CheckoutForm extends React.Component {
       shippingAddress: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.validateInputs = this.validateInputs.bind(this);
   }
 
   handleChange(event) {
@@ -16,6 +17,14 @@ class CheckoutForm extends React.Component {
     const { name, value } = event.target;
     newState[name] = value;
     this.setState(newState);
+  }
+
+  validateInputs() {
+    const { name, creditCard, shippingAddress } = this.state;
+    if (name && creditCard && shippingAddress) {
+      this.props.placeOrder(this.state);
+    }
+
   }
 
   render() {
@@ -30,6 +39,7 @@ class CheckoutForm extends React.Component {
           <div className="form-group">
             <label htmlFor="customerName">Name</label>
             <input id="customerName" name="name" type="text" className="form-control" onChange={this.handleChange}/>
+
           </div>
           <div className="form-group">
             <label htmlFor="customerCreidtCard">Credit Card</label>
@@ -46,10 +56,15 @@ class CheckoutForm extends React.Component {
             >
               &lt; Continue Shopping
             </h6>
-            <button
+            {/* <button
               className="btn btn-primary"
               type="button"
               onClick={() => this.props.placeOrder(this.state)}
+            > */}
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={() => this.validateInputs()}
             >
               Place Order
             </button>
