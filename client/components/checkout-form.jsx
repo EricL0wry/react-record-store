@@ -1,4 +1,5 @@
 import React from 'react';
+import FormInstruction from './form-instruction';
 
 class CheckoutForm extends React.Component {
   constructor(props) {
@@ -6,7 +7,8 @@ class CheckoutForm extends React.Component {
     this.state = {
       name: '',
       creditCard: '',
-      shippingAddress: ''
+      shippingAddress: '',
+      failedSubmission: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.validateInputs = this.validateInputs.bind(this);
@@ -23,13 +25,17 @@ class CheckoutForm extends React.Component {
     const { name, creditCard, shippingAddress } = this.state;
     if (name && creditCard && shippingAddress) {
       this.props.placeOrder(this.state);
+    } else {
+      const newState = {};
+      newState.failedSubmission = true;
+      this.setState(newState);
     }
-
   }
 
   render() {
     const { cart } = this.props;
     const total = `$${(cart.reduce((acc, curr) => acc + curr.price, 0) / 100).toFixed(2)}`;
+    const submitAttempted = this.state.failedSubmission;
 
     return (
       <div className="row flex-column px-3">
@@ -38,16 +44,18 @@ class CheckoutForm extends React.Component {
         <form>
           <div className="form-group">
             <label htmlFor="customerName">Name</label>
-            <input id="customerName" name="name" type="text" className="form-control" onChange={this.handleChange}/>
-
+            <input id="customerName" name="name" type="text" className="form-control" onChange={this.handleChange} required/>
+            <FormInstruction submitAttempted={submitAttempted} userInput={this.state.name} name="name"/>
           </div>
           <div className="form-group">
             <label htmlFor="customerCreidtCard">Credit Card</label>
-            <input id="customerCreditCard" name="creditCard" type="text" className="form-control" onChange={this.handleChange}/>
+            <input id="customerCreditCard" name="creditCard" type="text" className="form-control" onChange={this.handleChange} required/>
+            <FormInstruction submitAttempted={submitAttempted} userInput={this.state.creditCard} name="creditCard"/>
           </div>
           <div className="form-group">
             <label htmlFor="customerAddress">Shipping Address</label>
-            <textarea id="customerAddress" name="shippingAddress" rows="5" className="form-control" onChange={this.handleChange}></textarea>
+            <textarea id="customerAddress" name="shippingAddress" rows="5" className="form-control" onChange={this.handleChange} required></textarea>
+            <FormInstruction submitAttempted={submitAttempted} userInput={this.state.shippingAddress} name="shippingAddress"/>
           </div>
           <div className="d-flex justify-content-between mt-4">
             <h6
@@ -56,11 +64,6 @@ class CheckoutForm extends React.Component {
             >
               &lt; Continue Shopping
             </h6>
-            {/* <button
-              className="btn btn-primary"
-              type="button"
-              onClick={() => this.props.placeOrder(this.state)}
-            > */}
             <button
               className="btn btn-primary"
               type="button"
