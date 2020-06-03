@@ -20,3 +20,12 @@ Try the application live at [https://record-store.ericmichaellowry.com](https://
 - NPM
 - HTML 5
 - CSS3
+
+## Features
+
+- Users can browse a list of products
+- Users can view product details
+- Users can add an item to their cart
+- Users can view a cart summary
+- Users can return later to view their cart
+- Users can checkout
