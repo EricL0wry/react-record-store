@@ -62,7 +62,7 @@ class CheckoutForm extends React.Component {
               className="back text-muted mt-4 ml-4 mb-0"
               onClick={() => this.props.setView('catalog', {})}
             >
-              &lt; Continue Shopping
+              <i className="fas fa-caret-left"></i> Continue Shopping
             </h6>
             <button
               className="btn btn-primary"
