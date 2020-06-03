@@ -29,3 +29,9 @@ Try the application live at [https://record-store.ericmichaellowry.com](https://
 - Users can view a cart summary
 - Users can return later to view their cart
 - Users can checkout
+
+## Preview
+
+![Catalog](server/public/images/gif1.gif)
+
+![Checkout](server/public/images/gif2.gif)
