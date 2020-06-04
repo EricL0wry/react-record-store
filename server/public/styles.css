@@ -18,10 +18,20 @@
   height: 360px;
 }
 
+.card{
+  transition: all .2s ease-in-out;
+}
+
 .item:hover,
 .back:hover,
-.cart:hover{
+.cart:hover,
+.product-card:hover{
   cursor: pointer;
+}
+
+.product-card:hover{
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgb(228, 228, 228);
 }
 
 .form-instructions{

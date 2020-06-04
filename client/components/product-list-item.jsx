@@ -7,7 +7,7 @@ function ProductListItem(props) {
   return (
     <div className="col-12 col-md-6 col-lg-4 my-3">
       <div
-        className="card h-100 pt-3 bg-transparent"
+        className="card product-card h-100 pt-3 bg-transparent"
         onClick={() => props.setView('details', { productId })}
       >
         <img className="card-img-top card-image contain" src={image} alt={name}/>
