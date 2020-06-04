@@ -10,7 +10,7 @@ function ProductListItem(props) {
         className="card h-100 pt-3 bg-transparent"
         onClick={() => props.setView('details', { productId })}
       >
-        <img className="card-img-top card-image contain" src={image} alt="A ridiculous exercise tool"/>
+        <img className="card-img-top card-image contain" src={image} alt={name}/>
         <div className="card-body px-3 pb-3">
           <h6 className="card-subtitle">{bandName}</h6>
           <h5 className="card-title mb-3">{name}</h5>
