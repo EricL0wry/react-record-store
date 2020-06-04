@@ -215,6 +215,29 @@ ALTER TABLE ONLY public.products ALTER COLUMN "productId" SET DEFAULT nextval('p
 --
 
 COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
+68	29	2	2800
+69	29	3	3400
+70	29	1	4500
+71	30	3	3400
+72	30	3	3400
+73	30	2	2800
+74	30	2	2800
+75	31	2	2800
+76	31	2	2800
+77	31	2	2800
+78	31	3	3400
+79	32	2	2800
+80	33	2	2800
+81	34	3	3400
+82	35	1	4500
+83	36	1	4500
+84	36	1	4500
+85	36	5	2800
+86	37	3	3400
+87	38	3	3400
+88	39	2	2800
+89	40	1	4500
+90	40	1	4500
 \.
 
 
@@ -223,6 +246,18 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 --
 
 COPY public.carts ("cartId", "createdAt") FROM stdin;
+29	2020-05-26 11:10:58.25882-07
+30	2020-05-26 13:53:39.004468-07
+31	2020-05-26 14:00:47.868169-07
+32	2020-05-26 14:50:14.140711-07
+33	2020-05-26 14:51:50.403453-07
+34	2020-05-26 14:53:04.22102-07
+35	2020-05-26 14:54:13.764702-07
+36	2020-05-26 14:54:48.203343-07
+37	2020-05-26 15:11:06.138012-07
+38	2020-05-26 15:56:01.99502-07
+39	2020-05-27 08:52:51.391095-07
+40	2020-06-03 12:35:26.247132-07
 \.
 
 
@@ -231,6 +266,17 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 --
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
+11	29	Eric Lowry	1234 1234 1234 1234	Number\nCity, state, zip	2020-05-26 11:53:38.696261-07
+12	30	Eric Lowry	1234 1234 1234 1234	asdf	2020-05-26 14:00:34.186052-07
+13	31	Eric Lowry	1234 1234 1234 1234	Test	2020-05-26 14:48:36.272948-07
+14	32	Eric Lowry	1234 1234 1234 1234	asdfa	2020-05-26 14:50:20.404795-07
+15	33	Eric Lowry	1234 1234 1234 1234	asdfa	2020-05-26 14:52:21.881711-07
+16	34	Farts McGee	1234 1234 1234 1234	asdfasdf	2020-05-26 14:53:16.159041-07
+17	35	Eric Lowry	1234 1234 1234 1234	asdfasdf	2020-05-26 14:54:24.007059-07
+18	36	Eric Lowry	1234 1234 1234 1234	asfasdf	2020-05-26 14:55:25.568655-07
+19	37	Eric Lowry	13578654654645	Address	2020-05-26 15:54:57.416302-07
+20	38	Eric Lowry	1234 1234 1234 1234	asdfasdfdfasdfas	2020-05-26 15:56:37.896416-07
+21	39	Farts McGee	This is my Credit card	house house	2020-05-27 08:53:12.843837-07
 \.
 
 
@@ -255,9 +301,9 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 15	Pet Sounds	4200	/images/BeachBoys.jpg	Colored Vinyl 180 gram 12"	Pet Sounds is the eleventh studio album by the American rock band the Beach Boys, released May 16, 1966 on Capitol Records. It initially met with a lukewarm critical and commercial response in the United States, peaking at number 10 on Billboard Top LPs chart, lower than the band's preceding albums. Promoted as "the most progressive pop album ever", Pet Sounds attracted recognition for its ambitious recording and sophisticated music. It is widely considered to be among the most influential albums in the history of music.\nThe album was produced, arranged, and almost entirely composed by Brian Wilson with guest lyricist Tony Asher. His goal was to create "the greatest rock album ever made"—a cohesive work with no filler tracks. It is sometimes considered a Wilson solo album.\nPet Sounds is regarded by musicologists as an early concept album that advanced the field of music production, introducing non-standard harmonies and timbres, and incorporating elements of pop, jazz, exotica, classical, and the avant-garde. The album could not be replicated live and was the first time a group departed from the usual small-ensemble electric rock band format for a whole LP. Combined with its innovative music, which was perceived as a wholly self-conscious artistic statement (or "concept"), the record furthered the cultural legitimization of popular music, was crucial to the development of progressive/art rock, and helped bring psychedelic music to the mainstream.	The Beach Boys	Progressive Pop	1966
 16	Before Today	3400	/images/ArielPink.jpg	Collector Edition 140 gram 12"	Before Today is the eighth studio album by American recording artist Ariel Pink, credited to "Ariel Pink's Haunted Graffiti", and released on June 8, 2010. The album marked Pink's debut on the record label 4AD. It was his first official LP of new recordings since 2003's Worn Copy and his first written and recorded with a supporting band, referred to in the liner notes as "Ariel Pink's Haunted Graffiti".\nThe album was critically acclaimed upon release, with Pitchfork placing the album at #9 on its list of "The Top 50 Albums of 2010". Lead single "Round and Round" was also ranked by Pitchfork as the best track of 2010.	Ariel Pink's Haunted Graffiti	Indie Rock	2010
 17	Deja Entendu	2800	/images/BrandNew.jpg	Standard Edition 120 gram 12"	Deja Entendu is the second studio album by American rock band Brand New, released in 2003. It was widely praised for showing the band's maturation from their debut Your Favorite Weapon. The album's title is French for "already heard". Two singles and videos were released from the album: "The Quiet Things That No One Ever Knows" and "Sic Transit Gloria...Glory Fades". The album received very positive reviews and has since been placed on numerous lists as one of the greatest albums of the decade and from the emo genre.\nSeveral of the song titles reference films. The first track entitled "Tautou" references the lead actress, Audrey Tautou, in the movie Amélie. "Okay I Believe You, But My Tommy Gun Don't" is a line from Home Alone 2: Lost in New York, and "Sic Transit Gloria...Glory Fades" is a quote from Wes Anderson's film Rushmore.	Brand New	Emo	2003
-18	The Shape of Punk to Come	3400	/Images/Refused.jpg	Collector Edition 140 gram 12"	The Shape of Punk to Come: A Chimerical Bombination in 12 Bursts, often shortened to The Shape of Punk to Come, is the third album by Swedish hardcore punk band Refused, released on October 27, 1998 through Burning Heart Records.\nAlthough Refused broke up only months after the album's release, The Shape of Punk to Come has since found an audience for the band and largely contributed to their posthumous fame, as well as inspiring many later artists in a wide range of genres. Kerrang! magazine listed The Shape of Punk to Come at #13 on their 50 Most Influential Albums of All Time list in 2003.\nThis album marked a sharp and conscious departure from Refuseds earlier work. The philosophy of the album, expounded in the ample liner notes and encapsulated in the song "New Noise", was that punk and hardcore music could not be anti-establishment by continuing to package revolutionary lyrics in sounds which had been increasingly co-opted into the mainstream. The sound of the record challenged existing punk sensibilities; it can be seen as "punk" at a fundamental level and includes experimental combinations of post-hardcore, post-punk, techno, and jazz sounds.	Refused	Hardcore Punk	1998
 23	Paul's Boutique	4200	/images/BeastieBoys.jpg	Colored Vinyl 180 gram 12"	Paul's Boutique is the second studio album by American hip hop group Beastie Boys, released on July 25, 1989 by Capitol Records. Produced by the Dust Brothers, the album is composed almost entirely from samples, and was recorded over two years at Matt Dike's apartment and the Record Plant in Los Angeles.\nPaul's Boutique did not match the sales of group's 1986 debut Licensed to Ill, and was promoted minimally by Capitol. However, it became recognized as the group's breakthrough achievement, with its innovative lyrical and sonic style earning them a position as critical favorites within the hip-hop community. Sometimes described as the "Sgt. Pepper of hip-hop", Paul's Boutique has since been placed on several lists of the greatest albums of all time, and is viewed by many critics as a landmark album in hip hop.	Beastie Boys	Hip Hop	1989
 8	Ruin Jonny's Bar Mitzvah	3400	/images/MeFirst.jpg	Collector Edition 140 gram 12"	Ruin Jonny's Bar Mitzvah is a live album by Me First and the Gimme Gimmes, released on October 19, 2004, on Fat Wreck Chords.\nIt was recorded live at an actual bar mitzvah party, and its runtime lasts their entire performance, including a break in which little can be heard other than the sounds of party guests wandering around and chatting amongst themselves. Jonny Wixen, the Bar Mitzvah boy, plays drums on one of the hidden tracks that are on the final track. The CD comes with footage of the bar mitzvah.\nThe album is almost entirely made up of songs that have not appeared on previous albums. The only exceptions are two hidden tracks: "Seasons in the Sun" from Have a Ball (1997) and "Sloop John B" from Blow in the Wind (2001).	Me First and the Gimme Gimmes	Punk Rock	2004
+18	The Shape of Punk to Come	3400	/images/TheRefused.jpg	Collector Edition 140 gram 12"	The Shape of Punk to Come: A Chimerical Bombination in 12 Bursts, often shortened to The Shape of Punk to Come, is the third album by Swedish hardcore punk band Refused, released on October 27, 1998 through Burning Heart Records.\nAlthough Refused broke up only months after the album's release, The Shape of Punk to Come has since found an audience for the band and largely contributed to their posthumous fame, as well as inspiring many later artists in a wide range of genres. Kerrang! magazine listed The Shape of Punk to Come at #13 on their 50 Most Influential Albums of All Time list in 2003.\nThis album marked a sharp and conscious departure from Refuseds earlier work. The philosophy of the album, expounded in the ample liner notes and encapsulated in the song "New Noise", was that punk and hardcore music could not be anti-establishment by continuing to package revolutionary lyrics in sounds which had been increasingly co-opted into the mainstream. The sound of the record challenged existing punk sensibilities; it can be seen as "punk" at a fundamental level and includes experimental combinations of post-hardcore, post-punk, techno, and jazz sounds.	Refused	Hardcore Punk	1998
 19	Gimme Fiction	4500	/images/Spoon.jpg	Limited Edition 180 gram 12"	Gimme Fiction is the fifth studio album by American indie rock band Spoon. It was released on May 10, 2005, through Merge Records in the US and Matador Records in Europe. It debuted at number 44 on the Billboard 200. "I Turn My Camera On" was released as a single, and has become one of the band's biggest hits to date.\nGimme Fiction received widespread critical acclaim upon release. At Metacritic, which assigns a normalized rating out of 100 to reviews from mainstream critics, the album received an average score of 84, based on 30 reviews which indicates "universal acclaim". Eric Carr of Pitchfork praised the album's musical diversity and cited "I Turn My Camera On" as one of the most "breathtaking" songs the band had ever produced. Zeth Lundy of PopMatters named the album the band's "crowning achievement", while Jesus Chigley of Drowned in Sound described it as "a nocturnal, introspective refinement of previous releases that still capitalizes on Britt Daniel's classic pop song writing and sonic inventiveness."\nIn a 2005 back page column for the magazine Entertainment Weekly, author Stephen King named "I Summon You" as his favorite song of the year.	Spoon	Indie Rock	2005
 20	White Pony	3400	/images/Deftones.jpg	Collector Edition 140 gram 12"	White Pony is the third studio album by American alternative metal band Deftones, released on June 20, 2000 by Maverick Records. It marked a significant growth in the band's sound and is considered a turning point in their history in terms of experimentation, employing an increasingly experimental rock sound and incorporating influences from new wave, dream pop, trip hop, shoegaze, and post-rock into the alternative metal sound they had become known for. White Pony was also the first album to feature Frank Delgado as a full-time member of the band on turntables and synthesizer; Delgado had previously worked with the band as a featured guest on Around the Fur (1997) and Adrenaline (1995), producing sound effects on some songs. It was also the first Deftones record which Chino Moreno began to contribute rhythm guitar parts.\nUpon its release and retrospectively, the album was met with critical acclaim, and is generally regarded by fans and critics alike as one of their most mature outings up to that point. White Pony is Deftones' highest-selling album to date, and was certified platinum by the RIAA on July 17, 2002. The album includes two successful singles ("Change (In the House of Flies)" and "Back to School (Mini Maggit)"), the promotional single "Digital Bath," as well as the 2001 Grammy Award-winning track for Best Metal Performance, "Elite".	Deftones	Alternative Metal	2000
 21	Boxer	4200	/images/TheNational.jpg	Colored Vinyl 180 gram 12"	Boxer is the fourth studio album by American indie rock band The National, released on May 22, 2007 on Beggars Banquet Records. Produced by both Peter Katis and the band itself, the album has sold nearly 430,000 copies in the U.S. Following its release, the album debuted at #68 on the U.S. Billboard 200, selling about 9,500 copies in its first week.\nBoxer has made numerous "albums of the decade" lists including Pitchfork, Aquarium Drunkard, and Paste. In 2019, the album was ranked 68th on The Guardian's 100 Best Albums of the 21st Century list.	The National	Indie Rock	2007
@@ -270,21 +316,21 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 67, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 90, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 28, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 40, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 10, true);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 21, true);
 
 
 --
